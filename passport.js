@@ -22,11 +22,11 @@ function onDeserialize(user, done) {
 function onProfile(profile, done) {
     return done(null,
         {
-            id: profile.uid,
-            email: profile.email,
-            displayName: profile.cn,
-            firstName: profile.givenName,
-            lastName: profile.sn
+            id: profile['nameID'],
+            email: profile['nameID'],
+            displayName: profile['http://schemas.microsoft.com/identity/claims/displayname'],
+            firstName: profile['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'],
+            lastName: profile['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname']
         });
 }
 

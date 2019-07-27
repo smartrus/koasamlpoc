@@ -4,8 +4,10 @@ let route = Router();
 
 route.get('/', function *() {
     if (this.isAuthenticated()) {
-        this.body = {'authenticated': true};
-        return void 0;
+        //this.body = {'authenticated': true};
+        //return void 0;
+        this.redirect('/profile');
+	return;
     }
 
     this.redirect('/login');
